@@ -50,10 +50,11 @@ colnames(finaldata) <- featurenames  #apply descriptive variables name
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 setwd(dir)
+finaldata$activity <- factor(finaldata$activity, levels = c("WALKING","WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS","SITTING","STANDING","LAYING"), ordered=TRUE)
 mymean <- function(x){
 ln <- length(x)
   colMeans(x[,3:ln])
  }
 
-tidydata <- ddply(finaldata,.(activity,subject),  mymean) # create tidy dataset
-write.table(tidydata, file = "./tidydata.txt", row.name=FALSE)  # write tidy data to tidydata.txt file
+tidydata <- ddply(finaldata,.(subject,activity),  mymean) # create tidy dataset
+write.table(tidydata, file = "./tidydata.txt", row.name=FALSE, quote=FALSE)  # write tidy data to tidydata.txt file
