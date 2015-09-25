@@ -14,8 +14,8 @@ Given raw dataset was processed with the scripts run_analysis.R and create a tid
 Summaries the data fields of "tidydata.txt"
 
 ###Columns in the tidy dataset
- [1] "subject"  - The type of activity performed during measurements were taken                                        
- [2] "activity" - The ID of the participants                                        
+ [1] "activity" - The ID of the participants                                        
+ [2] "subject"  - The type of activity performed during measurements were taken                                        
 #####**Measurements:**
  [3] "timeBodyAcceleratorMeanX"                         
  [4] "timeBodyAcceleratorMeanY"                         

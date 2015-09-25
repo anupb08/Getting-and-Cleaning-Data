@@ -56,5 +56,5 @@ ln <- length(x)
   colMeans(x[,3:ln])
  }
 
-tidydata <- ddply(finaldata,.(subject,activity),  mymean) # create tidy dataset
-write.table(tidydata, file = "./tidydata.txt", row.name=FALSE, quote=FALSE)  # write tidy data to tidydata.txt file
+tidydata <- ddply(finaldata,.(activity,subject),  mymean) # create tidy dataset
+write.table(tidydata, file = "./tidydata.txt", row.name=FALSE)  # write tidy data to tidydata.txt file
